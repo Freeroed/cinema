@@ -7,7 +7,7 @@ create table genre(
 create table film(
 	id bigint not null PRIMARY KEY,
 	film_name varchar(255) not null,
-	image_url varchar(100),
+	image_url varchar(500),
 	description varchar(1000),
 	duration int not null,
 	genre_id bigint ,
@@ -37,6 +37,6 @@ create table film_seance(
         REFERENCES hall(id)
 )
 
-
+select * from film f where (select count(*) from film_seance fs2 where f.id = fs2.film_id and fs2."date" = now()::date) > 0
 
 
