@@ -37,6 +37,3 @@ create table film_seance(
         REFERENCES hall(id)
 )
 
-select * from film f where (select count(*) from film_seance fs2 where f.id = fs2.film_id and fs2."date" = now()::date) > 0
-
-

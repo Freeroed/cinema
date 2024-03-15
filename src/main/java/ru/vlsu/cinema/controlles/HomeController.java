@@ -8,7 +8,6 @@ public class HomeController {
 
     @GetMapping
     public String home() {
-        int a = 10;
         return "home";
     }
 
